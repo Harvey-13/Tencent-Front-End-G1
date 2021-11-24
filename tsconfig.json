@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",                          // 根路径
+    "paths": {								  // 路径映射，与 baseUrl 关联
+      "@*": ["src/*"],
+      "@comp*": ["src/components/*"],
+      "@utils*": ["src/utils/*"]
+    },
+  },
+  
+  "include": ["./src"],
+  "exclude": ["./node_modules"]
+}
