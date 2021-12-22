@@ -6,8 +6,11 @@ import TopBarRight from './ChildComp/TopBarRight/TopBarRight';
 export default function TopBar() {
   return (
     <div className='top-bar-container'>
-      <TopBarLeft />
-      <TopBarMid />
+      <div className='top-bar-left'>
+        <TopBarLeft />
+        <TopBarMid />
+      </div>
+
       <TopBarRight />
     </div>
   );

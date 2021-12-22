@@ -13,7 +13,7 @@ export default function TopBarMid() {
       </div>
 
       <div className='input-search mid-bar-item'>
-        <Input className='top-bar-btn' prefix={<IconFont iconName='search' />} />
+        <Input size='middle' className='top-bar-btn' prefix={<IconFont iconName='search' />} />
       </div>
 
       <div className='voice mid-bar-item'>
