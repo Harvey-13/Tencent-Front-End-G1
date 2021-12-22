@@ -1,0 +1,52 @@
+.bottom-bar-mid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+
+  .play-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 70%;
+
+    .play-icon-item {
+      cursor: pointer;
+
+      &:hover {
+        color: #ef6767;
+      }
+
+      svg {
+        font-size: 26px;
+      }
+    }
+
+    .play-or-pause {
+      svg {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .progress-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 30%;
+
+    .now-playing-time,
+    .song-total-item {
+      color: #ccc;
+    }
+
+    .progress-bar-item {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+}
