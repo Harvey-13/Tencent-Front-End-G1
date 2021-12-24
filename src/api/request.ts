@@ -4,8 +4,8 @@ import { message } from 'antd';
 // 创建axios实例
 const request = axios.create();
 
-request.defaults.baseURL = 'localhost:3000';
-request.defaults.withCredentials = false;
+request.defaults.baseURL = 'http://localhost:3000';
+request.defaults.withCredentials = true;
 /**
  * 设置超时时间和跨域是否允许携带凭证
  */

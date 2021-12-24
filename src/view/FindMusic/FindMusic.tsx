@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
-import { getBannerApi } from '@/api/FindMusic/recommend';
-
+import React from 'react';
+import FindMusicHeader from './ChildComp/FindMusicHeader/FindMusicHeader';
+import FindMusicBanner from './ChildComp/FindMusicBanner/FindMusicBanner';
 export default function FoundMusic() {
-  const getBanner = async () => {
-    const res = await getBannerApi(0);
-    console.log(res);
-  };
-
-  useEffect(() => {
-    getBanner();
-  });
-
-  return <div className='content-container'>Found Music</div>;
+  return (
+    <div className='content-container'>
+      <FindMusicHeader></FindMusicHeader>
+      <FindMusicBanner />
+    </div>
+  );
 }
