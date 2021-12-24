@@ -1,9 +1,8 @@
-// src/app.tsx
-import React from 'react';
-import './App.less';
+import './assets/css/common.less';
 import 'antd/dist/antd.css';
-const App: React.FC<any> = () => {
-  return <div className='app'></div>;
-};
-
-export default App;
+import { useRoutes } from 'react-router-dom';
+import router from './router/index';
+export default function App() {
+  const element = useRoutes(router);
+  return element;
+}
