@@ -1,5 +1,11 @@
 import React from 'react';
 import './SideBarItem.less';
-export default function SideBarItem(props: any) {
-  return <div className='side-bar-item'>{props.children}</div>;
+
+interface ISideBarItem {
+  isActive: Boolean;
+  children?: any;
+}
+
+export default function SideBarItem(props: ISideBarItem) {
+  return <div className={`side-bar-item ${props.isActive ? 'side-bar-item-active' : ''}`}>{props.children}</div>;
 }
