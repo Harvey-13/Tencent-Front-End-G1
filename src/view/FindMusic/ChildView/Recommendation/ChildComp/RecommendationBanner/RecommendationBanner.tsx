@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './FindMusicBanner.less';
+import './RecommendationBanner.less';
 import { Carousel } from 'antd';
 import { getBannerApi } from '@/api/FindMusic/recommend';
 import { IBannerResponse, IBannerImg } from '@view/FindMusic/types';
 
-export default function FindMusicBanner() {
+export default function RecommendationBanner() {
   const [bannerImgs, setBannerImgs] = useState([]);
   const getBanner = async () => {
     const res = await getBannerApi(0);
