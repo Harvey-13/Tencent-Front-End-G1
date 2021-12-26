@@ -1,0 +1,67 @@
+.singer-rank-container {
+  .lang-filter {
+    .lang-item {
+      position: relative;
+      display: inline-block;
+      height: 20px;
+      margin: 0 20px;
+      padding: 0 10px;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        right: -21px;
+        width: 2px;
+        height: 20px;
+        border-left: 2px solid #eee;
+        content: '';
+      }
+    }
+
+    .lang-item-active {
+      color: #ec4141;
+      background-color: #fdf5f5;
+      border-radius: 10px;
+    }
+  }
+
+  .singer-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    cursor: pointer;
+
+    .singer-item {
+      width: 150px;
+      margin-top: 20px;
+      margin-right: 20px;
+
+      .singer-img {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 8px;
+
+        .loading-icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 150px;
+          height: 150px;
+          font-size: 30px;
+        }
+      }
+
+      .singer-name {
+        margin-top: 5px;
+        overflow: hidden;
+      }
+    }
+  }
+}
