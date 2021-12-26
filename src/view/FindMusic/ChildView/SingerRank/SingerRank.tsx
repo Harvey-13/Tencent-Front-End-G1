@@ -43,7 +43,6 @@ export default function SingerRank() {
         loaded++;
         if (loaded === imgLength) {
           setIsLoading(false);
-          console.log('图片加载完成 展示组件');
         }
       };
     }
