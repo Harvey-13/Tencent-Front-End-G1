@@ -34,7 +34,7 @@
 
 ## ❔About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+see a demo [vedio](https://harveyhust.top/sources/show.mp4) about this proj.
 
 we aim to build a neteaseMusic-like site with the same functions with react from the start. Now there are functions of finding music, mvs, billboard and singers. Also we've done login module via real netease accounts.
 
