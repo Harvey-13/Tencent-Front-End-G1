@@ -46,6 +46,8 @@ export default function TopBarRightLogin() {
       setVisible(false);
       // user Info 存入 redux, 更改nickname
       store.dispatch(setUserInfo(res.profile));
+    } else {
+      message.error('登陆失败，检查用户名密码是否正确');
     }
   };
 
