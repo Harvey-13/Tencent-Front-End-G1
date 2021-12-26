@@ -1,0 +1,102 @@
+
+.content-container{
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+  background-color: #fff;
+}
+.cover-img{
+  position: relative;
+  img{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    transform: translate(50%);
+    border: 5px solid rgb(227, 224, 224);
+    padding:30px;
+    background-color: rgb(28, 29, 32);
+  }
+
+  overflow: hidden;
+}
+.song-text{
+  height: 400px;
+  width: 100%;
+  overflow: auto;
+  color:rgb(140, 139, 139)
+}
+.comment-content{
+  display: inline-block;
+  width: 100%;
+  word-break: break-all;
+}
+.comment-text{
+  color: rgb(90, 95, 99);
+}
+.comment-time{
+  font-size: 12px;
+  color: rgb(162, 164, 164);
+}
+.sing-name{
+  font-size: 14px;
+  color: rgb(48, 58, 67);
+}
+.singer-name{
+  font-size: 14px;
+  color: rgb(198, 203, 212);
+}
+
+.sing-content{
+  .ant-drawer{
+    .ant-drawer-header{
+      border: none;
+      padding-bottom: 0;
+      .hot-search{
+          font-size: 14px;
+          color: #bababa;
+      }
+    }
+    .ant-drawer-body{
+      padding-top: 15px;
+      .hot-song-item{
+        display: inline-block;
+        padding: 5px 15px;
+        margin: 0 10px 10px 0;
+        border-radius: 20px;
+        font-size: 12px;
+        cursor: pointer;
+        border: 1px solid #d9d9d9;
+        &:hover{
+          background-color: #f5f5f5;
+        }
+      }
+      .search-history{
+       
+        margin-top: 20px;
+        .search-title{
+          font-size: 14px;
+          color: #bababa;
+          margin-bottom: 20px;
+        }
+      }
+      .songs,.artists,.albums{
+        margin-top: 20px;
+        .title{
+          margin-bottom: 15px;
+          color: #bababa;
+        }
+        .song-item,.artists-item,.albums-item{
+          margin-bottom: 10px;
+          cursor: pointer;
+          &:hover{
+            background-color: #ccc;
+          }
+
+        }
+      }
+    }
+  }
+}

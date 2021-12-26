@@ -30,24 +30,16 @@ export default function SideBar() {
 
   const netMusicItems: ISideBarItem[] = [
     {
-      url: '/findmusic',
+      url: 'discovery',
       text: '发现音乐',
     },
     {
-      url: '/podcast',
-      text: '播客',
+      url: 'postcase',
+      text: 'pos',
     },
     {
       url: '/video',
       text: '视频',
-    },
-    {
-      url: '/subscribe',
-      text: '关注',
-    },
-    {
-      url: '/livestream',
-      text: '直播',
     },
     {
       url: '/personalFM',
@@ -56,11 +48,6 @@ export default function SideBar() {
   ];
 
   const myMusicItems: ISideBarItem[] = [
-    {
-      url: '/download',
-      text: '本地与下载',
-      iconName: 'download',
-    },
     {
       url: '/recentplayed',
       text: '最近播放',
@@ -82,7 +69,7 @@ export default function SideBar() {
         {netMusicItems.map(item => {
           return (
             <Link to={item.url} style={linkStyle} key={item.url}>
-              <SideBarItem isActive={item.url === location.pathname}>
+              <SideBarItem isActive={location.pathname.match(item.url) != null}>
                 <span>{item.text}</span>
               </SideBarItem>
             </Link>
