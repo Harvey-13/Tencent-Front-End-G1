@@ -4,3 +4,9 @@ export function setUserInfo(item: any = null) {
     item,
   };
 }
+export const setFun = (data:any) =>{
+  return{
+      type:"SET",
+      data:data
+  }
+}

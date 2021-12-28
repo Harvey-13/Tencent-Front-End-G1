@@ -1,0 +1,83 @@
+.content-container{
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+  background-color: #fff;
+}
+.my-tabs{
+  .ant-tabs-nav{
+    &::before{
+      display: none;
+    }
+  }
+  .ant-tabs-ink-bar.ant-tabs-ink-bar-animated{
+    background-color: rgb(219, 79, 73);
+    height: 3px;
+    border-radius: 2px;
+  }
+  .my-btn-all{
+    &:active{
+      border-color: #ec4141;
+    }
+  }
+  .my-btn-download{
+    border-color: rgb(236, 236, 236);
+  }
+  .my-table{
+    margin-top: 30px;
+    .ant-table-cell{
+      border: none;
+      &::before{
+        display: none;
+      }
+    }
+    .index{
+      color:#ccc;
+      font-size: 12px;
+    }
+    .vip,.try,.sq,.mv{
+      padding:0px 2px;
+      font-size: 12px;
+    }
+    .vip{
+      border:1px solid rgb(237, 113, 67);
+      color:rgb(237, 113, 67);
+    }
+    .try{
+      border:1px solid rgb(228, 148, 145);
+      color:rgb(228, 148, 145);
+    }
+    .sq{
+      border:1px solid rgb(221, 93, 88);
+      color:rgb(221, 93, 88);
+    }
+    .mv{
+      border:1px solid rgb(220, 93, 88);
+      color: rgb(220, 93, 88);;
+    }
+    .ant-pagination{
+      text-align: center;
+      .ant-pagination-item{
+        &:hover{
+          border-color:#d9d9d9;
+          background-color: #f2f2f3;
+          a{
+            color: rgba(0,0,0,0.85);
+          }
+        }
+      }
+      .ant-pagination-jump-next.ant-pagination-jump-next-custom-icon:hover {
+        .anticon.anticon-double-right.ant-pagination-item-link-icon{
+          color:rgba(0,0,0,0.85);
+        }
+      }
+      .ant-pagination-item.ant-pagination-item-active{
+        background-color: #c7332f;
+        border-color: #c7332f;
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+}

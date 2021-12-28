@@ -1,0 +1,49 @@
+.singer-music-info-container {
+  width: 100%;
+
+  .music-list-title {
+    margin: 10px 0;
+    font-weight: 800;
+    font-size: 24px;
+  }
+
+  .music-list {
+    width: 100%;
+
+    .music-item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      font-size: 16px;
+      border-radius: 3px;
+      cursor: default;
+
+      &:nth-child(odd) {
+        background-color: rgb(249 249 249);
+      }
+
+      &:nth-child(even) {
+        background-color: #fff;
+      }
+
+      &:hover {
+        background-color: rgb(240 241 242);
+      }
+
+      .music-index {
+        margin: 0 10px;
+      }
+
+      .music-name {
+        margin: 0 10px;
+      }
+
+      .music-duration {
+        flex: 1;
+        margin-right: 10px;
+        text-align: end;
+      }
+    }
+  }
+}

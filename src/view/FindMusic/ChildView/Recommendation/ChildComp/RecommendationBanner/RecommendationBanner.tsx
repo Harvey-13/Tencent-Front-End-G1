@@ -14,7 +14,7 @@ export default function RecommendationBanner() {
 
   useEffect(() => {
     getBanner();
-  });
+  },[]);
 
   return (
     <div className='find-music-banner-container'>

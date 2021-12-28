@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './SingerRank.less';
 import { getSingerApi } from '@/api/FindMusic/singerRank';
 import IconFont from '@/components/common/IconFont/IconFont';
+import { useNavigate } from 'react-router-dom';
 export default function SingerRank() {
   // 歌手列表
   const [singers, setSingers] = useState([]);
@@ -58,6 +59,11 @@ export default function SingerRank() {
     allLoaded();
   }, [singers]);
 
+  const nav = useNavigate();
+  const singerClickHandler = (id: number) => {
+    nav('/singerdetail/' + id);
+  };
+
   return (
     <div className='singer-rank-container'>
       <div className='lang-filter'>
@@ -76,7 +82,7 @@ export default function SingerRank() {
       <div className='singer-list'>
         {singers.map((singer: any) => {
           return (
-            <div key={singer.id} className='singer-item'>
+            <div key={singer.id} className='singer-item' onClick={() => singerClickHandler(singer.id)}>
               <div className='singer-img'>
                 <div className='loading-icon' style={{ opacity: isLoading ? '1' : '0' }}>
                   <IconFont iconName='more'></IconFont>
