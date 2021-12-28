@@ -1,15 +1,17 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { Button, Input } from 'antd';
 import IconFont from '../../../../../components/common/IconFont/IconFont';
 import './TopBarMid.less';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {setFun} from '../../../../../store/action/index';
+
 import { useNavigate } from 'react-router';
+import store from '@/store';
+import { setFun } from '../../../../../store/action';
 export const TopBarMid = (props:any)=> {
   const navigate = useNavigate();
   const [value,setValue] = useState<string>('');
-
+useEffect(()=>{
+  console.log(props,23);
+},[])
   return (
     <div className='top-bar-mid-container'>
       <div className='left-arrow mid-bar-item'>
@@ -21,8 +23,9 @@ export const TopBarMid = (props:any)=> {
       <div className='input-search mid-bar-item'>
         <Input
           onChange={(e)=>{
-            navigate('/discovery/search')
-            props.setFun(e.target.value);
+            navigate('/discovery/search');
+            // props.setFun(e.target.value);
+            store.dispatch(setFun(e.target.value))
             setValue(e.target.value);
           }}
           value={value}
@@ -39,14 +42,5 @@ export const TopBarMid = (props:any)=> {
   );
 }
 
-const mapStateToProps=(state:any)=>{
-  return{
-      state
-  }
-}
-const mapDispathcToProps = (dispatch:any) =>{
-  return{
-      setFun:bindActionCreators(setFun,dispatch)
-  }
-}
-export default connect(mapStateToProps,mapDispathcToProps)(TopBarMid);
+
+export default TopBarMid

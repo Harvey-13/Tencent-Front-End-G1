@@ -1,4 +1,4 @@
-import  {createStore} from 'redux';
-import fun from './reduces/index';
-const stroe = createStore(fun);
-export default stroe;
+import reducer from './reducer';
+import { createStore } from 'redux';
+const store = createStore(reducer);
+export default store;

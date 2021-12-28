@@ -1,0 +1,47 @@
+.mv-rank-item-self {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .rank-num {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ec4141;
+  }
+
+  .mv-img {
+    border-radius: 6px;
+    position: relative;
+    margin: 0 20px;
+
+    .mv-play-count {
+      position: absolute;
+      top: 2px;
+      right: 4px;
+      color: #eee;
+    }
+  }
+
+  .mv-info {
+    color: #4d4d4d;
+    padding: 10px;
+    cursor: pointer;
+
+    .mv-name {
+      max-width: 230px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .mv-artist {
+      margin-top: 10px;
+    }
+
+    .mv-name:hover,
+    .mv-artist:hover {
+      color: #000;
+    }
+  }
+}

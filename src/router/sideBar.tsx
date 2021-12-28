@@ -2,14 +2,12 @@ import React, { ReactNode, Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
 import { lazy } from 'react';
 import findMusicRouter from './findMusic';
-import SongDetail from '@view/SongDetail';
-import PodCast from '@view/PodCast/PodCast';
 
 const Video = lazy(() => import('@view/Video/Video'));
 const PersonalFM = lazy(() => import('@view/PersonalFM/PersonalFM'));
 const RecentPlayed = lazy(() => import('@view/RecentPlayed/RecentPlayed'));
 const FindMusic = lazy(() => import('@/view/FindMusic/FindMusic'));
-const MyFavorite = lazy(() => import('@/view/Video/Video'));
+const SingerDetail = lazy(() => import('@/view/Singer/SingerDetail'));
 const lazyLoad = (children: ReactNode): ReactNode => {
   return <Suspense fallback={<>loading</>}>{children}</Suspense>;
 };
@@ -19,10 +17,7 @@ const sideBarRouter: RouteObject[] = [
     element: lazyLoad(<FindMusic />),
     children: findMusicRouter,
   },
-  {
-    path: 'postcase',
-    element: lazyLoad(<PodCast />),
-  },
+
   {
     path: 'video',
     element: lazyLoad(<Video />),
@@ -38,7 +33,11 @@ const sideBarRouter: RouteObject[] = [
   },
   {
     path: 'myfavorite',
-    element: lazyLoad(<MyFavorite />),
+    element: lazyLoad(<RecentPlayed />),
+  },
+  {
+    path: 'singerdetail/:id',
+    element: lazyLoad(<SingerDetail />),
   },
 ];
 

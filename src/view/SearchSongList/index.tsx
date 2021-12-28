@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {Row,Col,Typography,Space,Tabs,Button,Table, message} from 'antd'
 import {CaretRightOutlined,PlusOutlined,DownloadOutlined,HeartOutlined} from '@ant-design/icons';
-import {getSearchSongsList} from '../../api/playlists';
+import {getSearchSongsList} from '@/api/FindMusic/songList';
 import { useNavigate } from 'react-router';
-import {connect} from 'react-redux';
-// import {bindActionCreators} from 'redux';
-// import { setFun } from '../store/action';
-// import {getQueryVariable} from '../SongDetail'
 import './index.less';
+import store from '@/store';
 const {Title} = Typography;
 // const keywords = getQueryVariable('keywords');
 export const  SearchSongs = (props:any)=> {
@@ -35,10 +32,6 @@ export const  SearchSongs = (props:any)=> {
             <HeartOutlined style={{color:'gray'}} />
             <DownloadOutlined style={{color:'gray'}}  />
             <a onClick={()=>{navigate(`/discovery/music-detail?id=${row.id}`)}}>{row.name}</a>
-            {/* <span className="vip">VIP</span>
-            <span className="try">试听</span>
-            <span className="sq">SQ</span>
-            <span className="mv">MV<CaretRightOutlined /></span> */}
           </Space>
         )
       }
@@ -65,16 +58,12 @@ export const  SearchSongs = (props:any)=> {
         return <span>{m}:{s}</span>
       }
     },
-    // {
-    //   title: '热度',
-    //   key: ''
-    // },
   ];
   
  
   const getSearchSongsListFun = async (page:number,)=>{
     const res:any = await getSearchSongsList({
-      keywords:props.state,
+      keywords:store.getState().fun,
       type:1,
       offset:page?(page-1)*10:0,
       limit:20
@@ -88,14 +77,14 @@ export const  SearchSongs = (props:any)=> {
   }
   useEffect(()=>{
     getSearchSongsListFun(1);
-  },[total,props.state])
+  },[total,store.getState().fun])
   return( 
     <div className='content-container'>
       <Row>
           <Col span={24}>
             <Space>
             <Title level={3}>搜索</Title>
-            <Title level={3}>{props.state}</Title>
+            <Title level={3}>{store.getState().fun}</Title>
             </Space>
           </Col>
       </Row>
@@ -173,14 +162,4 @@ export const  SearchSongs = (props:any)=> {
     </div>
   );
 }
-const mapStateToProps=(state:any)=>{
-  return{
-      state
-  }
-}
-const mapDispathcToProps = () =>{
-  return{
-      // setFun:bindActionCreators(dispatch:any)
-  }
-}
-export default connect(mapStateToProps,mapDispathcToProps)(SearchSongs);
+export default SearchSongs

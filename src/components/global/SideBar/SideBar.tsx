@@ -30,12 +30,8 @@ export default function SideBar() {
 
   const netMusicItems: ISideBarItem[] = [
     {
-      url: 'discovery',
+      url: '/discovery',
       text: '发现音乐',
-    },
-    {
-      url: 'postcase',
-      text: 'pos',
     },
     {
       url: '/video',

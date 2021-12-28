@@ -16,11 +16,6 @@ export default function FindMusicHeader() {
       text: '个性推荐',
     },
     {
-      key: 'songlist',
-      url: './songlist',
-      text: '歌单',
-    },
-    {
       key: 'songrank',
       url: './songrank',
       text: '排行榜',
@@ -45,7 +40,6 @@ export default function FindMusicHeader() {
         {headerItem.map(item => (
           <Menu.Item key={item.key}>
             <Link style={current === item.key ? headerItemActiveStyle : undefined} to={item.url}>
-              {' '}
               {item.text}
             </Link>
           </Menu.Item>
